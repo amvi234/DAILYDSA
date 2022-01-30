@@ -17,6 +17,7 @@ int main(){
     cout<<"val1 is  "<<val1<<endl;
     int o = n-r;
 
+
     for(int i=o;i>=1;i--){
         val2 *= i; 
     }
@@ -26,6 +27,6 @@ int main(){
     ////
 
 
-    
+
     return 0;
 }
