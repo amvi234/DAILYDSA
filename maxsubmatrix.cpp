@@ -5,12 +5,17 @@ using namespace std;
  // } Driver Code Ends
 class Solution{
     
+
+    
     public:
     int Sum(vector<vector<int>> mat,int i, int j, int k)
    {
        int sum = 0;
        for(int p=i;p<i+k;p++)
        {
+
+
+
            for(int q=j;q<j+k;q++)
            {
                sum+=mat[p][q];
