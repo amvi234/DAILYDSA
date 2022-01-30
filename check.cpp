@@ -23,5 +23,9 @@ int main(){
     cout<<"val2 is  "<<val2<<endl;
     long long x = val/(val2*val1);
     cout<<x; 
+    ////
+
+
+    
     return 0;
 }
