@@ -1,27 +1,25 @@
 #include<iostream>
 using namespace std;
-void inssort(int *arr,int idx,int n ){
-    if(idx == n){
-            return;
+void selsort(int *arr,int idx,int n){
+    if(idx==n){
+        return;
     }
-        int curr = arr[idx];
-        int j = idx - 1;
-
-        for(j=idx-1;j >= 0;j--){
-            if(curr < arr[j]){ // found greater value than curr shift to right
-                arr[j + 1] = arr[j];
-            }
-            else // Smaller element found
-                break;
+    // cout<<"The array element is: "<<arr[3]<<endl;;
+    int minIndex=idx;
+    for(int i=idx+1;i<n;i++){
+        
+        if(arr[i]<arr[minIndex]){
+           minIndex=i;
         }
-        arr[j + 1] = curr; //place curr element at correct place
-
-        // one part Done recursion will do other work;
-        inssort(arr , idx + 1 , n);
+       
+    }
+    swap(arr[minIndex],arr[idx]);
+    selsort(arr,idx+1,n);
 }
+
 int main(){
-    int arr[5]={1,9,6,3,8};
-    inssort(arr,1,5);
+    int arr[5]={2,5,1,7,3};
+    selsort(arr,0,5);
     cout<<"After sorting: "<<endl;
     for(int i=0;i<5;i++)
         cout<<arr[i]<<" " ;
