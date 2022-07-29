@@ -1,5 +1,7 @@
 #include <iostream>
 #include <queue>
+#include <stack>
+
 using namespace std;
 
 class node
@@ -66,12 +68,78 @@ void levelordertraversal(node *root)
         }
     }
 }
+void reverselevelordertraversal(node *root)
+{
+    stack <node *> S;
+    queue <node *> Q;
+    Q.push(root);
+
+    while (Q.empty() == false)
+    {
+        /* Dequeue node and make it root */
+        root = Q.front();
+        Q.pop();
+        S.push(root);
+  
+        /* Enqueue right child */
+        if (root->right)
+            Q.push(root->right); // NOTE: RIGHT CHILD IS ENQUEUED BEFORE LEFT
+  
+        /* Enqueue left child */
+        if (root->left)
+            Q.push(root->left);
+    }
+   while (S.empty() == false)
+    {
+        root = S.top();
+        cout << root->data << " ";
+        S.pop();
+    }
+}
+
+void inorder(node * root)
+{
+    if(root==NULL){
+        return ;
+    }
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right); 
+}
+void preorder(node * root)
+{
+    if(root==NULL){
+        return ;
+    }
+    cout<<root->data<<" "; 
+    inorder(root->left);
+     inorder(root->right);
+    
+}
+void postorder(node * root)
+{
+    if(root==NULL){
+        return ;
+    }
+    inorder(root->left);
+    inorder(root->right); 
+     cout<<root->data<<" ";
+}
 int main()
 {
     node *root = NULL;
     root = buildTree(root);
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     cout << "printing level order traversal output" << endl;
+    
     levelordertraversal(root);
+    cout << "printing reverse level order traversal output" << endl;
+    reverselevelordertraversal(root);
+    cout<<"Inorder"<<endl;
+    inorder(root);
+    cout<<"preorder"<<endl;
+    preorder(root);
+    cout<<"postorder"<<endl;
+    postorder(root);
     return 0;
 }
