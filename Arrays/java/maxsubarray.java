@@ -1,3 +1,4 @@
+package java;
 public int maxSubArray(int[] nums) {
     int sum=0;
     int maxsum=Integer.MIN_VALUE;
