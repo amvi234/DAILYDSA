@@ -118,26 +118,26 @@ class Solution{
             int size = q.size();
             vector<int>ans(size);
         
-    	for(int i=0;i<size;i++){
-    	    
-    	    
-    	    Node* val = q.front();
-    	    q.pop();
-    	    int index = lefttoright?i:size-i-1;
-    	    
-    	    ans[index]=val->data;
-    	    if(val->left){
-    	        q.push(val->left);
-    	    }
-    	    if(val->right){
-    	        q.push(val->right);
-    	    }
-    	    
-    	}
-    	lefttoright=!lefttoright;
-    		for(auto i:ans){
-    	    result.push_back(i);
-    	}
+            for(int i=0;i<size;i++){
+                
+                
+                Node* val = q.front();
+                q.pop();
+                int index = lefttoright?i:size-i-1;
+                
+                ans[index]=val->data;
+                if(val->left){
+                    q.push(val->left);
+                }
+                if(val->right){
+                    q.push(val->right);
+                }
+                
+            }
+            lefttoright=!lefttoright;
+            for(auto i:ans){
+                result.push_back(i);
+            }
     	}
     
     	return result;
