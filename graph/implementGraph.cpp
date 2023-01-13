@@ -2,10 +2,11 @@
 using namespace std;
 #include<unordered_map>
 #include<list>
+template <typename T>
 class graph{
     public:
-    unordered_map<int,list<int>>adj;
-    void addEdge(int u,int v,bool direction){
+    unordered_map<T,list<T>>adj;
+    void addEdge(T u,T v,bool direction){
         //direction=0 --  undirected graph
         //direction=1 -- directed graph
         adj[u].push_back(v);
@@ -30,7 +31,7 @@ int main(){
      int m;
     cout<<"Enter the number of edges"<<endl;
     cin>>m;
-    graph g;
+    graph<int> g;
     for(int i=0;i<m;i++){
         int u,v;
         cin>>u>>v;
