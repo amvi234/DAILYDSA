@@ -1,6 +1,5 @@
-
-Siddhartha Rakshit
-6 months ago
+//T.C:- O(V+E)
+//S.C:- O(N)
 #include<unordered_map>
 #include <list>
 void dfs(int node, int parent, vector<int> &discT, vector<int> &low, unordered_map< int, bool > &visited, vector<vector<int>> &result, unordered_map<int, list <int> > &adj, int &timer)

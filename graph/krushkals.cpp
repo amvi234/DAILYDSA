@@ -1,3 +1,5 @@
+//T.C:- O(m*logm)
+//S.C:- O(N)
 #include<algorithm>
 bool cmp(vector<int>&a,vector<int>&b){
     return a[2]<b[2];
