@@ -11,7 +11,7 @@ int func(int n){
 }
 int main(){
     int n;
-    cin>>n;
+    cin>>n; 
     cout<< func(n)<<endl;
     return 0;
 }
