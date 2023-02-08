@@ -1,6 +1,6 @@
 class Solution {
 public:
-//RECURSION - TLE O(N2)
+//RECURSION - TLE TC = EXPONENTIAL
     int solve1(vector<int>cost,int k){
         if(k==0){
             return cost[0];
