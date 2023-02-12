@@ -129,6 +129,7 @@ public:
 
         // RECURSION + MEMOIZATION
         /*
+        
         vector<vector<int>> dp(4, vector<int>(obstacles.size(), -1));
         return solveMem(obstacles, 2, 0, dp);
         */
