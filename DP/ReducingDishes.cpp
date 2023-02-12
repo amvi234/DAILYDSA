@@ -41,6 +41,15 @@ public:
     int maxSatisfaction(vector<int>& satisfaction) {
         sort(satisfaction.begin(),satisfaction.end());
         // vector<vector<int>>dp(satisfaction.size(),vector<int>(satisfaction.size()+1,-1));
-        return solvetab2(satisfaction);
+        int ans=0;
+        for(int i=0;i<satisfaction.size();i++){
+            int sum=0;
+            int count=1;
+            for(int j=i;j<satisfaction.size();j++){
+                sum+=satisfaction[j]*(count++);
+            }
+            ans=max(ans,sum);
+        }
+return ans;
     }
 };
