@@ -2,16 +2,15 @@
 #include<algorithm>
 using namespace std;
 int main(){
-    int s=0;
-    int ans=0;
-    int a[3]={1,-1,4};
-    sort(a,a+3);
-       for(int i=1;i<3;i++){
-        s=abs(a[i-1]-a[i]);
-        ans+=s;
-        cout<<s<<endl;
-       }
-       cout<<ans;
+    vector<vector<int>>e(4,vector<int>(2));
+    e = {{5,4},{6,4},{6,7},{2,3}};
+    sort(e.begin(),e.end());
+    for(auto x:e){
+        //For each element 'y' in 'x'
+        for(auto y:x) cout << y << " ";
+        cout << endl;
+    }
+    // return 0;
     //    cout<<s;
     // int n,r;
     // cin>>n>>r;
