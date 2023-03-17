@@ -67,6 +67,6 @@ int main(){
     t->insertWord("CAST");
     t->insertWord("MAN");
     cout<<"Present or not "<<endl;
-    cout<<t->searchWord("MAN");
+    cout<<t->searchWord("MANi");
     return 0;
 }
